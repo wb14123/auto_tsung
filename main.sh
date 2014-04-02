@@ -14,6 +14,8 @@ for host in `cat $DIR/hosts.conf`; do
 	yes | ssh root@$host "sh remote/gen_ssh.sh" >> $DIR/remote_keys
 done
 
+cat ~/.ssh/id_rsa.pub >> $DIR/remote_keys
+
 for host in `cat $DIR/hosts.conf`; do
 	echo "## Config remote $host ..."
 	scp remote_hosts root@$host:~/remote
