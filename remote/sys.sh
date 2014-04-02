@@ -7,7 +7,7 @@ cp -v /etc/hosts /etc/hosts.bak
 cp -v ~/.ssh/authorized_keys ~/.ssh/authorized_keys.bak
 
 echo "### Config system"
-echo "root   soft    nofile    1000000"  > /etc/security/limits.conf
+echo "root   soft    nofile    1000000"  >> /etc/security/limits.conf
 echo "root   hard    nofile    1000000"  >> /etc/security/limits.conf
 echo "fs.file-max = 2000000" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_tw_reuse = 1" >> /etc/sysctl.conf
